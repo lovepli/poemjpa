@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>PoemList</title>
+    <link rel="shortcut icon" th:href="@{/admin/images/logo.png}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>诗词列表</h1>
+<div class="row-fluid">
+    <div class="span12">
+        <form class="form-search" th:action="@{/detailContent2}"  method="post">
+            <input class="input-medium search-query" type="text"  name="detailContent"  id="detailContent" placeholder="请输入查询条件" />
+            <input type="submit" value="查找" class="btn" />
+        </form>
+    </div>
+</div>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>名称</th>
+            <th>作者</th>
+            <th>朝代</th>
+            <th>类型</th>
+            <th>内容</th>
+            <th>修改</th>
+            <th>删除</th>
+           <!-- <th>上传</th>-->
+            <th>下载</th>
+            <th>播放</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="user : ${users}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.poemName}"></td>
+            <td th:text="${user.poemAuthor}"></td>
+            <td th:text="${user.poemDynasty}"></td>
+            <td th:text="${user.poemType}"></td>
+            <td th:text="${user.poemDescription}"></td>
+            <td><a th:href="@{/toEdit(id=${user.id})}">修改</a></td>
+            <td><a th:href="@{/delete(id=${user.id})}">删除</a></td>
+          <!--  <td><a th:href="@{/uploadMusic(id=${user.id})}">上传</a></td>-->
+            <td><a th:href="@{/downloadMusic(id=${user.id})}">下载</a></td>
+            <td><a th:href="@{/fMusic(id=${user.id})}">播放</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">添加</a>
+    </div>
+</div>
+
+</body>
+</html>

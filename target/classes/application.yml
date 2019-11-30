@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: siit2018!
+    url: jdbc:mysql://bj-cdb-cd5sarhi.sql.tencentcdb.com:62910/sell?characterEncoding=utf-8&useSSL=false
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        hbm2ddl:
+          auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false
+server:
+  port: 8899
+#  tomcat:
+#    uri-encoding: UTF-8
+#  http:
+#    encoding:
+#      charset: UTF-8
+#      enabled: true
+#      force: true

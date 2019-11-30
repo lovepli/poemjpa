@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>播放音频</title>
+</head>
+<body>
+
+
+    <video id="video" th:width="420" style="margin-top:15px;" controls="controls" loop="loop">
+    <source th:src="${url}" type="video/mp4" />
+    </video>
+
+</body>
+</html>

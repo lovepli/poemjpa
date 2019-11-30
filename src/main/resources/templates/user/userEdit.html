@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>poem</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>修改诗词</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/edit}" th:object="${user}"  method="post">
+        <input type="hidden" name="id" th:value="*{id}" />
+        <div class="form-group">
+            <label for="poemName" class="col-sm-2 control-label">名字</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemName"  id="poemName" th:value="*{poemName}" placeholder="poemName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemAuthor" class="col-sm-2 control-label" >作者</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemAuthor" id="poemAuthor"  th:value="*{poemAuthor}" placeholder="poemAuthor"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemDynasty" class="col-sm-2 control-label">朝代</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemDynasty"  id="poemDynasty" th:value="*{poemDynasty}" placeholder="poemDynasty"/>
+            </div>  <!--只能填写数字-->
+        </div>
+        <div class="form-group">
+            <label for="poemType" class="col-sm-2 control-label">类型</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemType"  id="poemType" th:value="*{poemType}" placeholder="poemType"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemDescription" class="col-sm-2 control-label">内容</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemDescription"  id="poemDescription" th:value="*{poemDescription}" placeholder="poemDescription"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Submit" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <a href="/toAdd" th:href="@{/list}" class="btn btn-info">Back</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>poem</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>添加诗词</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/add}"  method="post">
+        <div class="form-group">
+            <label for="poemName" class="col-sm-2 control-label">名字</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemName"  id="poemName" placeholder="请填写诗词名称"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemAuthor" class="col-sm-2 control-label" >作者</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemAuthor" id="poemAuthor" placeholder="请填写作者"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemDynasty" class="col-sm-2 control-label">朝代</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemDynasty"  id="poemDynasty" placeholder="请填朝代写"/>
+            </div>  <!-- 智能填写数字 type="password"  -->
+        </div>
+        <div class="form-group">
+            <label for="poemType" class="col-sm-2 control-label">类型</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemType"  id="poemType" placeholder="请填写诗词类型，诗,词,曲等"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poemDescription" class="col-sm-2 control-label">内容</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="poemDescription"  id="poemDescription" placeholder="请填写诗词内容"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Submit" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="Reset" class="btn btn-info" />
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
